@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+  <process:MainProcess xmi:id="_wyC-oG-XEeu0cbR2lD_3gQ" name="LeaveRequestDiagram" version="3.1" author="delphine.bonitasoft" bonitaVersion="7.12.1" bonitaModelVersion="7.12.0-004">
+    <elements xmi:type="process:Pool" xmi:id="_wyC-oW-XEeu0cbR2lD_3gQ" name="LeaveRequest" version="3.1">
+      <elements xmi:type="process:Lane" xmi:id="_wyC-om-XEeu0cbR2lD_3gQ" name="Requestor" actor="_wyC--2-XEeu0cbR2lD_3gQ">
+        <elements xmi:type="process:StartEvent" xmi:id="_wyC-o2-XEeu0cbR2lD_3gQ" name="Fill request" outgoing="_wyC-6G-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-pG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-pW-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-pm-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:ServiceTask" xmi:id="_wyC-p2-XEeu0cbR2lD_3gQ" name="Notify request approved" outgoing="_wyC-9W-XEeu0cbR2lD_3gQ" incoming="_wyC-7m-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-qG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-qW-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-qm-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_pGmD8G-ZEeu0cbR2lD_3gQ" name="sendRequestApprovedEmail" definitionId="email" event="ON_ENTER" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_pGmD8W-ZEeu0cbR2lD_3gQ" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD8m-ZEeu0cbR2lD_3gQ" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD82-ZEeu0cbR2lD_3gQ" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD9G-ZEeu0cbR2lD_3gQ" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD9W-ZEeu0cbR2lD_3gQ" name="2525" content="2525" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD9m-ZEeu0cbR2lD_3gQ" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD92-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD-G-ZEeu0cbR2lD_3gQ" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD-W-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD-m-ZEeu0cbR2lD_3gQ" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD-2-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD_G-ZEeu0cbR2lD_3gQ" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD_W-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmD_m-ZEeu0cbR2lD_3gQ" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmD_2-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEAG-ZEeu0cbR2lD_3gQ" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEAW-ZEeu0cbR2lD_3gQ" name="hr@acme.com" content="hr@acme.com" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEAm-ZEeu0cbR2lD_3gQ" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEA2-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEBG-ZEeu0cbR2lD_3gQ" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEBW-ZEeu0cbR2lD_3gQ" name="getRequestorEmail" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xA;try{&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xA;&#x9;&#x9;&#xA;&#x9;return apiAccessor.getIdentityAPI().getUserContactData(processInitiator.id, false).email&#xA;&#x9;&#x9;&#xA;}catch(UserNotFoundException e){&#xA;&#x9;// Handle UserNotFoundException here&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xA;}&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_pGmEBm-ZEeu0cbR2lD_3gQ" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_pGmEB2-ZEeu0cbR2lD_3gQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmECG-ZEeu0cbR2lD_3gQ" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmECW-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmECm-ZEeu0cbR2lD_3gQ" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEC2-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEDG-ZEeu0cbR2lD_3gQ" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEDW-ZEeu0cbR2lD_3gQ" name="Leave request approved" content="Leave request approved" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEDm-ZEeu0cbR2lD_3gQ" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmED2-ZEeu0cbR2lD_3gQ" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEEG-ZEeu0cbR2lD_3gQ" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEEW-ZEeu0cbR2lD_3gQ" name="&lt;pattern-expression>" content="" type="TYPE_PATTERN" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEEm-ZEeu0cbR2lD_3gQ" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_pGmEE2-ZEeu0cbR2lD_3gQ"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEFG-ZEeu0cbR2lD_3gQ" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEFW-ZEeu0cbR2lD_3gQ" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEFm-ZEeu0cbR2lD_3gQ" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_pGmEF2-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_pGmEGG-ZEeu0cbR2lD_3gQ" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_pGmEGW-ZEeu0cbR2lD_3gQ"/>
+              </parameters>
+            </configuration>
+          </connectors>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_wyC-q2-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_wyC-rG-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_wyC-rW-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_wyC-rm-XEeu0cbR2lD_3gQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_wyC-r2-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:ServiceTask" xmi:id="_wyC-sG-XEeu0cbR2lD_3gQ" name="Notify request rejected" outgoing="_wyC--G-XEeu0cbR2lD_3gQ" incoming="_wyC-8m-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-sW-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-sm-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-s2-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_r90vwG-ZEeu0cbR2lD_3gQ" name="sendRequestRejectedEmail" definitionId="email" event="ON_ENTER" definitionVersion="1.2.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_r90vwW-ZEeu0cbR2lD_3gQ" definitionId="email" version="1.2.0" modelVersion="7.12.0-004">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vwm-ZEeu0cbR2lD_3gQ" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vw2-ZEeu0cbR2lD_3gQ" name="localhost" content="localhost" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vxG-ZEeu0cbR2lD_3gQ" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vxW-ZEeu0cbR2lD_3gQ" name="2525" content="2525" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vxm-ZEeu0cbR2lD_3gQ" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vx2-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vyG-ZEeu0cbR2lD_3gQ" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vyW-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vym-ZEeu0cbR2lD_3gQ" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vy2-ZEeu0cbR2lD_3gQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vzG-ZEeu0cbR2lD_3gQ" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vzW-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90vzm-ZEeu0cbR2lD_3gQ" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_r90vz2-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v0G-ZEeu0cbR2lD_3gQ" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v0W-ZEeu0cbR2lD_3gQ" name="hr@acme.com" content="hr@acme.com" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v0m-ZEeu0cbR2lD_3gQ" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v02-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v1G-ZEeu0cbR2lD_3gQ" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v1W-ZEeu0cbR2lD_3gQ" name="getRequestorEmail" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xA;try{&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xA;&#x9;&#x9;&#xA;&#x9;return apiAccessor.getIdentityAPI().getUserContactData(processInitiator.id, false).email&#xA;&#x9;&#x9;&#xA;}catch(UserNotFoundException e){&#xA;&#x9;// Handle UserNotFoundException here&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xA;}&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_r90v1m-ZEeu0cbR2lD_3gQ" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_r90v12-ZEeu0cbR2lD_3gQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v2G-ZEeu0cbR2lD_3gQ" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v2W-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v2m-ZEeu0cbR2lD_3gQ" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v22-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v3G-ZEeu0cbR2lD_3gQ" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v3W-ZEeu0cbR2lD_3gQ" name="Leave request rejected" content="Leave request rejected" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v3m-ZEeu0cbR2lD_3gQ" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v32-ZEeu0cbR2lD_3gQ" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v4G-ZEeu0cbR2lD_3gQ" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v4W-ZEeu0cbR2lD_3gQ" name="&lt;pattern-expression>" content="" type="TYPE_PATTERN" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v4m-ZEeu0cbR2lD_3gQ" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_r90v42-ZEeu0cbR2lD_3gQ"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v5G-ZEeu0cbR2lD_3gQ" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v5W-ZEeu0cbR2lD_3gQ" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v5m-ZEeu0cbR2lD_3gQ" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_r90v52-ZEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_r90v6G-ZEeu0cbR2lD_3gQ" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_r90v6W-ZEeu0cbR2lD_3gQ"/>
+              </parameters>
+            </configuration>
+          </connectors>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_wyC-tG-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_wyC-tW-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_wyC-tm-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_wyC-t2-XEeu0cbR2lD_3gQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_wyC-uG-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_wyC-uW-XEeu0cbR2lD_3gQ" name="End - request approved" incoming="_wyC-9W-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-um-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-u2-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-vG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_wyC-vW-XEeu0cbR2lD_3gQ" name="End - request rejected" incoming="_wyC--G-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-vm-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-v2-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-wG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:XORGateway" xmi:id="_wyC-wW-XEeu0cbR2lD_3gQ" name="Is approved?" outgoing="_wyC-7m-XEeu0cbR2lD_3gQ _wyC-8m-XEeu0cbR2lD_3gQ" incoming="_wyC-62-XEeu0cbR2lD_3gQ">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-wm-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-w2-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-xG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+      </elements>
+      <elements xmi:type="process:Lane" xmi:id="_wyC-xW-XEeu0cbR2lD_3gQ" name="Validator" actor="_wyC--2-XEeu0cbR2lD_3gQ">
+        <elements xmi:type="process:Task" xmi:id="_wyC-xm-XEeu0cbR2lD_3gQ" name="Validate request" outgoing="_wyC-62-XEeu0cbR2lD_3gQ" incoming="_wyC-6G-XEeu0cbR2lD_3gQ" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wyC-x2-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wyC-yG-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wyC-yW-XEeu0cbR2lD_3gQ" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_wyC-ym-XEeu0cbR2lD_3gQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_wyC-y2-XEeu0cbR2lD_3gQ" name="request" content="request" type="TYPE_VARIABLE" returnType="com.company.model.LeaveRequest">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_wyC-zG-XEeu0cbR2lD_3gQ" name="request" dataType="_wyC_G2-XEeu0cbR2lD_3gQ" className="com.company.model.LeaveRequest"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_wyC-zW-XEeu0cbR2lD_3gQ" name="requestInput.isApproved" content="requestInput?.isApproved" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_wyC-zm-XEeu0cbR2lD_3gQ" name="requestInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_wyC-z2-XEeu0cbR2lD_3gQ" type="JAVA_METHOD" expression="setIsApproved">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_wyC-0G-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_wyC-0W-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_wyC-0m-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_wyC-02-XEeu0cbR2lD_3gQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_wyC-1G-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_wyC-1W-XEeu0cbR2lD_3gQ">
+            <targetForm xmi:type="expression:Expression" xmi:id="_wyC-1m-XEeu0cbR2lD_3gQ" name="validateLeaveRequest" content="a2d34ed1-13ba-4f82-93cb-4c9fd11e7905" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          </formMapping>
+          <contract xmi:type="process:Contract" xmi:id="_wyC-12-XEeu0cbR2lD_3gQ">
+            <inputs xmi:type="process:ContractInput" xmi:id="_wyC-2G-XEeu0cbR2lD_3gQ" name="requestInput" type="COMPLEX" dataReference="request" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_wyC-2W-XEeu0cbR2lD_3gQ" name="isApproved" type="BOOLEAN" createMode="false"/>
+            </inputs>
+          </contract>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="_wyC-2m-XEeu0cbR2lD_3gQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
+        <filters xmi:type="process:ActorFilter" xmi:id="_wyC-22-XEeu0cbR2lD_3gQ" name="requestorManager" definitionId="bonita-actorfilter-initiator-manager" definitionVersion="1.0">
+          <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_wyC-3G-XEeu0cbR2lD_3gQ" definitionId="bonita-actorfilter-initiator-manager" version="1.0">
+            <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_wyC-3W-XEeu0cbR2lD_3gQ" key="autoAssign">
+              <expression xmi:type="expression:Expression" xmi:id="_wyC-3m-XEeu0cbR2lD_3gQ" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+            </parameters>
+          </configuration>
+        </filters>
+      </elements>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_wyC-32-XEeu0cbR2lD_3gQ" name="request" dataType="_wyC_G2-XEeu0cbR2lD_3gQ" className="com.company.model.LeaveRequest">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_wyC-4G-XEeu0cbR2lD_3gQ" name="initRequest()" content="import org.bonitasoft.engine.identity.UserNotFoundException&#xA;&#xA;def leaveRequestVar = new com.company.model.LeaveRequest()&#xA;leaveRequestVar.leaveStart = requestInput?.leaveStart&#xA;leaveRequestVar.dayCount = requestInput?.dayCount&#xA;&#xA;try{&#xA;&#x9;def processInitiator = apiAccessor.getIdentityAPI().getUser(apiAccessor.getProcessAPI()&#xA;&#x9;&#x9;&#x9;.getProcessInstance(processInstanceId)&#xA;&#x9;&#x9;&#x9;.getStartedBy())&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;leaveRequestVar.requestorId = processInitiator.id&#xA;&#xA;}catch(UserNotFoundException e){&#xA;&#x9;// Handle UserNotFoundException here&#xA;&#x9;// Was the process started by the system (e.g.: a start event) ?&#xA;&#x9;// Has the user who started the process instance been deleted ?&#xA;}&#xA;&#xA;&#xA;return leaveRequestVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.LeaveRequest">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_wyC-4W-XEeu0cbR2lD_3gQ" name="requestInput" type="COMPLEX"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_wyC-4m-XEeu0cbR2lD_3gQ" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_wyC-42-XEeu0cbR2lD_3gQ" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+        </defaultValue>
+      </data>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_wyC-5G-XEeu0cbR2lD_3gQ">
+        <targetForm xmi:type="expression:Expression" xmi:id="_wyC-5W-XEeu0cbR2lD_3gQ" name="fillLeaveRequest" content="da107827-0cec-4bdd-9075-31234e139d9e" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      </formMapping>
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_wyC-5m-XEeu0cbR2lD_3gQ">
+        <targetForm xmi:type="expression:Expression" xmi:id="_wyC-52-XEeu0cbR2lD_3gQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      </overviewFormMapping>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC-6G-XEeu0cbR2lD_3gQ" target="_wyC-xm-XEeu0cbR2lD_3gQ" source="_wyC-o2-XEeu0cbR2lD_3gQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC-6W-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC-6m-XEeu0cbR2lD_3gQ" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC-62-XEeu0cbR2lD_3gQ" target="_wyC-wW-XEeu0cbR2lD_3gQ" source="_wyC-xm-XEeu0cbR2lD_3gQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC-7G-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC-7W-XEeu0cbR2lD_3gQ" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC-7m-XEeu0cbR2lD_3gQ" name="Yes" target="_wyC-p2-XEeu0cbR2lD_3gQ" source="_wyC-wW-XEeu0cbR2lD_3gQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC-72-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC-8G-XEeu0cbR2lD_3gQ" name="request - LeaveRequest#isIsApproved" content="isIsApproved" interpreter="GROOVY" type="TYPE_JAVA_METHOD_CALL" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_wyC-8W-XEeu0cbR2lD_3gQ" name="request" dataType="_wyC_G2-XEeu0cbR2lD_3gQ" className="com.company.model.LeaveRequest"/>
+        </condition>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC-8m-XEeu0cbR2lD_3gQ" name="No" target="_wyC-sG-XEeu0cbR2lD_3gQ" source="_wyC-wW-XEeu0cbR2lD_3gQ" isDefault="true">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC-82-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC-9G-XEeu0cbR2lD_3gQ" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC-9W-XEeu0cbR2lD_3gQ" target="_wyC-uW-XEeu0cbR2lD_3gQ" source="_wyC-p2-XEeu0cbR2lD_3gQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC-9m-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC-92-XEeu0cbR2lD_3gQ" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_wyC--G-XEeu0cbR2lD_3gQ" target="_wyC-vW-XEeu0cbR2lD_3gQ" source="_wyC-sG-XEeu0cbR2lD_3gQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_wyC--W-XEeu0cbR2lD_3gQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_wyC--m-XEeu0cbR2lD_3gQ" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <actors xmi:type="process:Actor" xmi:id="_wyC--2-XEeu0cbR2lD_3gQ" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
+      <contract xmi:type="process:Contract" xmi:id="_wyC-_G-XEeu0cbR2lD_3gQ">
+        <inputs xmi:type="process:ContractInput" xmi:id="_wyC-_W-XEeu0cbR2lD_3gQ" name="requestInput" type="COMPLEX" dataReference="request">
+          <inputs xmi:type="process:ContractInput" xmi:id="_wyC-_m-XEeu0cbR2lD_3gQ" name="leaveStart" type="LOCALDATE"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_wyC-_2-XEeu0cbR2lD_3gQ" name="dayCount" type="INTEGER"/>
+        </inputs>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_wyC_AG-XEeu0cbR2lD_3gQ" expression="requestInput?.leaveStart != null" errorMessage="leaveStart is mandatory for LeaveRequest" name="mandatory_requestInput_leaveStart">
+          <inputNames>requestInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_wyC_AW-XEeu0cbR2lD_3gQ" expression="requestInput?.dayCount != null" errorMessage="dayCount is mandatory for LeaveRequest" name="mandatory_requestInput_dayCount">
+          <inputNames>requestInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_wyC_Am-XEeu0cbR2lD_3gQ" expression="requestInput.leaveStart.isAfter(java.time.LocalDate.now())" errorMessage="Leave start must be in the future" name="leaveStartIsFuture">
+          <inputNames>requestInput</inputNames>
+        </constraints>
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_wyC_A2-XEeu0cbR2lD_3gQ" expression="requestInput.dayCount > 0" errorMessage="Day count must be greater than zero" name="atLeastOneDay">
+          <inputNames>requestInput</inputNames>
+        </constraints>
+      </contract>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_wyC_BG-XEeu0cbR2lD_3gQ">
+        <name xmi:type="expression:Expression" xmi:id="_wyC_BW-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_wyC_Bm-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_wyC_B2-XEeu0cbR2lD_3gQ">
+        <name xmi:type="expression:Expression" xmi:id="_wyC_CG-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_wyC_CW-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_wyC_Cm-XEeu0cbR2lD_3gQ">
+        <name xmi:type="expression:Expression" xmi:id="_wyC_C2-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_wyC_DG-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_wyC_DW-XEeu0cbR2lD_3gQ">
+        <name xmi:type="expression:Expression" xmi:id="_wyC_Dm-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_wyC_D2-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_wyC_EG-XEeu0cbR2lD_3gQ">
+        <name xmi:type="expression:Expression" xmi:id="_wyC_EW-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_wyC_Em-XEeu0cbR2lD_3gQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+    </elements>
+    <datatypes xmi:type="process:BooleanType" xmi:id="_wyC_E2-XEeu0cbR2lD_3gQ" name="Boolean"/>
+    <datatypes xmi:type="process:DateType" xmi:id="_wyC_FG-XEeu0cbR2lD_3gQ" name="Date"/>
+    <datatypes xmi:type="process:IntegerType" xmi:id="_wyC_FW-XEeu0cbR2lD_3gQ" name="Integer"/>
+    <datatypes xmi:type="process:LongType" xmi:id="_wyC_Fm-XEeu0cbR2lD_3gQ" name="Long"/>
+    <datatypes xmi:type="process:DoubleType" xmi:id="_wyC_F2-XEeu0cbR2lD_3gQ" name="Double"/>
+    <datatypes xmi:type="process:StringType" xmi:id="_wyC_GG-XEeu0cbR2lD_3gQ" name="Text"/>
+    <datatypes xmi:type="process:JavaType" xmi:id="_wyC_GW-XEeu0cbR2lD_3gQ" name="Java_object"/>
+    <datatypes xmi:type="process:XMLType" xmi:id="_wyC_Gm-XEeu0cbR2lD_3gQ" name="XML"/>
+    <datatypes xmi:type="process:BusinessObjectType" xmi:id="_wyC_G2-XEeu0cbR2lD_3gQ" name="Business_Object"/>
+  </process:MainProcess>
+  <notation:Diagram xmi:id="_wyC_HG-XEeu0cbR2lD_3gQ" type="Process" element="_wyC-oG-XEeu0cbR2lD_3gQ" name="MyDiagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_wyC_HW-XEeu0cbR2lD_3gQ" type="2007" element="_wyC-oW-XEeu0cbR2lD_3gQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Hm-XEeu0cbR2lD_3gQ" type="5008"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_H2-XEeu0cbR2lD_3gQ" type="7001">
+        <children xmi:type="notation:Node" xmi:id="_wyC_IG-XEeu0cbR2lD_3gQ" type="3007" element="_wyC-om-XEeu0cbR2lD_3gQ">
+          <children xmi:type="notation:DecorationNode" xmi:id="_wyC_IW-XEeu0cbR2lD_3gQ" type="5007"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Im-XEeu0cbR2lD_3gQ" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_wyC_I2-XEeu0cbR2lD_3gQ" type="3002" element="_wyC-o2-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_JG-XEeu0cbR2lD_3gQ" type="5024">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_JW-XEeu0cbR2lD_3gQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_Jm-XEeu0cbR2lD_3gQ" x="60" y="68"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wyC_J2-XEeu0cbR2lD_3gQ" type="3027" element="_wyC-p2-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_KG-XEeu0cbR2lD_3gQ" type="5017"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_KW-XEeu0cbR2lD_3gQ" x="446" y="25" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wyC_Km-XEeu0cbR2lD_3gQ" type="3027" element="_wyC-sG-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_K2-XEeu0cbR2lD_3gQ" type="5017"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_LG-XEeu0cbR2lD_3gQ" x="440" y="128" width="120" height="60"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wyC_LW-XEeu0cbR2lD_3gQ" type="3003" element="_wyC-uW-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Lm-XEeu0cbR2lD_3gQ" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_L2-XEeu0cbR2lD_3gQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_MG-XEeu0cbR2lD_3gQ" x="623" y="35"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wyC_MW-XEeu0cbR2lD_3gQ" type="3003" element="_wyC-vW-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Mm-XEeu0cbR2lD_3gQ" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_M2-XEeu0cbR2lD_3gQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_NG-XEeu0cbR2lD_3gQ" x="621" y="139"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wyC_NW-XEeu0cbR2lD_3gQ" type="3008" element="_wyC-wW-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Nm-XEeu0cbR2lD_3gQ" type="5026">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_N2-XEeu0cbR2lD_3gQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_OG-XEeu0cbR2lD_3gQ" x="337" y="64" width="43" height="43"/>
+            </children>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_wyC_OW-XEeu0cbR2lD_3gQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_wyC_Om-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_wyC_O2-XEeu0cbR2lD_3gQ"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_wyC_PG-XEeu0cbR2lD_3gQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_PW-XEeu0cbR2lD_3gQ"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_wyC_Pm-XEeu0cbR2lD_3gQ" type="3007" element="_wyC-xW-XEeu0cbR2lD_3gQ">
+          <children xmi:type="notation:DecorationNode" xmi:id="_wyC_P2-XEeu0cbR2lD_3gQ" type="5007"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_wyC_QG-XEeu0cbR2lD_3gQ" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_wyC_QW-XEeu0cbR2lD_3gQ" type="3005" element="_wyC-xm-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Qm-XEeu0cbR2lD_3gQ" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_Q2-XEeu0cbR2lD_3gQ" x="160" y="84"/>
+            </children>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_wyC_RG-XEeu0cbR2lD_3gQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_wyC_RW-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_wyC_Rm-XEeu0cbR2lD_3gQ"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_wyC_R2-XEeu0cbR2lD_3gQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_SG-XEeu0cbR2lD_3gQ" x="161" y="219"/>
+        </children>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wyC_SW-XEeu0cbR2lD_3gQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_Sm-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_wyC_S2-XEeu0cbR2lD_3gQ"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_wyC_TG-XEeu0cbR2lD_3gQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyC_TW-XEeu0cbR2lD_3gQ" width="1960" height="250"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_wyC_Tm-XEeu0cbR2lD_3gQ"/>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_T2-XEeu0cbR2lD_3gQ" type="4001" element="_wyC-6G-XEeu0cbR2lD_3gQ" source="_wyC_I2-XEeu0cbR2lD_3gQ" target="_wyC_QW-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_UG-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_UW-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_Um-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_U2-XEeu0cbR2lD_3gQ" points="[-1, 14, -136, -262]$[-1, 276, -136, 0]$[85, 276, -50, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_VG-XEeu0cbR2lD_3gQ" type="4001" element="_wyC-62-XEeu0cbR2lD_3gQ" source="_wyC_QW-XEeu0cbR2lD_3gQ" target="_wyC_NW-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_VW-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_Vm-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_V2-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_WG-XEeu0cbR2lD_3gQ" points="[13, -25, -135, 249]$[13, -277, -135, -3]$[130, -277, -18, -3]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_WW-XEeu0cbR2lD_3gQ" type="4001" element="_wyC-7m-XEeu0cbR2lD_3gQ" source="_wyC_NW-XEeu0cbR2lD_3gQ" target="_wyC_J2-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_Wm-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_W2-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_XG-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_XW-XEeu0cbR2lD_3gQ" points="[0, -21, -93, 19]$[0, -36, -93, 4]$[88, -36, -5, 4]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wyC_Xm-XEeu0cbR2lD_3gQ" id="(0.05,0.4)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_X2-XEeu0cbR2lD_3gQ" type="4001" element="_wyC-8m-XEeu0cbR2lD_3gQ" source="_wyC_NW-XEeu0cbR2lD_3gQ" target="_wyC_Km-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_YG-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_YW-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_Ym-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_Y2-XEeu0cbR2lD_3gQ" points="[0, 22, -142, -51]$[0, 72, -142, -1]$[82, 72, -60, -1]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_ZG-XEeu0cbR2lD_3gQ" type="4001" element="_wyC-9W-XEeu0cbR2lD_3gQ" source="_wyC_J2-XEeu0cbR2lD_3gQ" target="_wyC_LW-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_ZW-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_Zm-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_Z2-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_aG-XEeu0cbR2lD_3gQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_wyC_aW-XEeu0cbR2lD_3gQ" type="4001" element="_wyC--G-XEeu0cbR2lD_3gQ" source="_wyC_Km-XEeu0cbR2lD_3gQ" target="_wyC_MW-XEeu0cbR2lD_3gQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyC_am-XEeu0cbR2lD_3gQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyC_a2-XEeu0cbR2lD_3gQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wyC_bG-XEeu0cbR2lD_3gQ" fontName=".AppleSystemUIFont"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wyC_bW-XEeu0cbR2lD_3gQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>
